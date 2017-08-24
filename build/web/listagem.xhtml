@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p=http://primefaces.org/ui>
+    <h:head>
+        <title>Listagem Usuarios</title>
+    </h:head>
+    <h:body>
+        <h1>Listagem Usuário</h1>
+        <h:form id="formListagem">
+            <h:dataTable value="#{listagemBean.listaUsuario}" var="usuario" rules="rows" cellpadding="4">
+                <f:facet name="header">Listagem de Usuários</f:facet>
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                        #{usuario.codUsuario}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nome</f:facet>
+                        #{usuario.nome}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                        #{usuario.email}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Telefone</f:facet>
+                        #{usuario.telefone}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Rua</f:facet>
+                        #{usuario.endereco.rua}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Bairro</f:facet>
+                        #{usuario.endereco.bairro}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Cadastrar Documentos</f:facet>
+                    <h:commandLink action="#{listagemBean.cadastrarDocumentos()}" >Cadastrar
+                        <f:setPropertyActionListener target="#{cadastroDocumentoBean.usuario}"
+                                                     value="#{usuario}"/>
+                    </h:commandLink>
+
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Excluir</f:facet>
+                    <h:commandLink action="#{listagemBean.removerUsuario()}" >Excluir
+                        <f:setPropertyActionListener target="#{listagemBean.usuario}"
+                                                     value="#{usuario}"/>
+                    </h:commandLink>
+
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Atualizar</f:facet>
+                    <h:commandLink action="#{listagemBean.atualizarUsuario()}" >Atualizar
+                        <f:setPropertyActionListener target="#{cadastroUsuarioEnderecoBean.usuario}"
+                                                     value="#{usuario}"/>
+                         <f:setPropertyActionListener target="#{cadastroUsuarioEnderecoBean.endereco}"
+                                                      value="#{usuario.endereco}"/>
+                    </h:commandLink>
+                </h:column>
+            </h:dataTable>
+            
+            <h:commandButton action="#{listagemBean.cadastroUsuario()}" value="Cadastro Usuário"/>
+        </h:form>
+
+    </h:body>
+</html>
+
