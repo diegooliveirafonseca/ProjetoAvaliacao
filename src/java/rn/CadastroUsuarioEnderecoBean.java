@@ -43,7 +43,7 @@ public class CadastroUsuarioEnderecoBean {
         }
         limpar();
 
-        return "index";
+        return "cadastroUsuario";
     }
 
     public String listarUsuarios() {

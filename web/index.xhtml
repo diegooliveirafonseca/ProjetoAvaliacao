@@ -2,33 +2,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p=http://primefaces.org/ui>
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title> Cadastro de Usuário </title>
+        <title> Projeto Avaliação </title>
     </h:head>
-    <h:body>
-        <h:form  >
-            <h:inputHidden value="#{cadastroUsuarioEnderecoBean.usuario.codUsuario}"/>
-            <h:panelGrid columns="2" id="idpanelGrid">
+    <h:body style="background-color: cornflowerblue">
+        <h1 align="center"> Bem vindo ao Projeto Avaliação </h1>
 
-                <h:outputText value="Nome: "/>
-                <h:inputText value="#{cadastroUsuarioEnderecoBean.usuario.nome}"/>
-                <h:outputText value="Telefone: "/>
-                <h:inputText value="#{cadastroUsuarioEnderecoBean.usuario.telefone}"/>
-                <h:outputText value="Email "/>
-                <h:inputText value="#{cadastroUsuarioEnderecoBean.usuario.email}"/>
-                <h:outputText value="Rua "/>
-                <h:inputText value="#{cadastroUsuarioEnderecoBean.endereco.rua}"/>
-                <h:outputText value="Numero "/>
-                <h:inputText value="#{cadastroUsuarioEnderecoBean.endereco.numero}"/>
-                <h:outputText value="Bairro "/>
-                <h:inputText value="#{cadastroUsuarioEnderecoBean.endereco.bairro}"/>
-
-            </h:panelGrid> 
-
-            <h:commandButton action="#{cadastroUsuarioEnderecoBean.salvar()}"  value="Salvar"/>
-            <h:commandButton action="#{cadastroUsuarioEnderecoBean.listarUsuarios()}"  value="Listar"/>
+        <div id="menu" >
+            <h:form>
+                <p:menubar style="color: blue">
+                    <p:submenu label="Cadastro">
+                        <p:menuitem value="Usuário" action="#{MenuBean.menuUsuario()}" />
+                        <p:menuitem value="Hotmail" url="http://www.hotmail.com" />
+                        <p:menuitem value="Yahoo Mail" url="http://mail.yahoo.com" />
+                    </p:submenu>
+                    <p:submenu label="Videos">
+                        <p:menuitem value="Youtube" url="http://www.youtube.com" />
+                        <p:menuitem value="Break" url="http://www.break.com" />
+                    </p:submenu>
+                </p:menubar>
             </h:form>
+        </div>
+        <br/>
+        <div id="img" align="center">
+            <img src="img/java-web.png" alt="Poxa poxa" width="900" height="370"/>
+        </div>    
+        
     </h:body>
 </html>
 

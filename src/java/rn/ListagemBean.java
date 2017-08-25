@@ -39,11 +39,11 @@ public class ListagemBean {
     
     
     public String cadastroUsuario(){
-           return "index";
+           return "cadastroUsuario";
     }
 
     public String atualizarUsuario() {
-        return "index";
+        return "cadastroUsuario";
     }
 
     public void setListaUsuario(List<Usuario> listaUsuario) {
